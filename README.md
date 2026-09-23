@@ -45,9 +45,17 @@ After login, the normal prompt is `>`. Invalid credentials are rejected and the 
 | `en` | Enable root access after entering the root password. |
 | `shutdown` | Shut down the session. Requires root access. |
 | `clearterm` | Clear the terminal using the host operating system command. |
+| `date` | Show the host's local date. |
+| `time` | Show the host's local time. |
+| `uptime` | Show how long the NYXOS process has been running. |
+| `hostname` | Show the host computer's hostname. |
+| `resolve HOST` | Resolve a hostname through the host network. |
+| `ping HOST` | Send one host-network ping and report its result. |
 | `dataset list` | List all datasets. |
 | `dataset view NAME` | Display a dataset's values. |
 | `dataset edit NAME` | Create or edit a dataset. |
+| `dataset delete NAME` | Delete and persist a dataset. |
+| `dataset rename OLD NEW` | Rename and persist a dataset. |
 | `compile dataset NAME` | Evaluate supported math expressions in a dataset. |
 
 ## Root Access
@@ -152,3 +160,7 @@ Datasets are loaded when the program starts and saved when:
 - The session shuts down successfully.
 
 There is no virtual file system. All persistent application data is stored under `datasets` in `fs.fs`.
+
+## Host Network Commands
+
+Network commands use the host operating system and network stack. `resolve` uses Python DNS resolution, while `ping` invokes the host `ping` executable without a shell. Targets are passed as arguments, so shell syntax is not interpreted.
