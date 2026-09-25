@@ -7,7 +7,6 @@ A small Python-based terminal simulation with a retro boot sequence, TSO-style l
 - `System.py` - Main program.
 - `fs.fs` - Persistent JSON storage containing datasets only.
 - `nyxos.db` - Persistent local SQL database created by the SQL server.
-- `tests/test_system.py` - Standard-library regression tests.
 - `README.md` - Project documentation.
 
 ## Run
